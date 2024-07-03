@@ -30,8 +30,8 @@ def generar_datos():
             if nombre_imagen.endswith('.jpg') or nombre_imagen.endswith('.png') or nombre_imagen.endswith('.jpeg'):
                 ruta = os.path.join(carpeta, nombre_imagen)
                 imagen = Image.open(ruta)
-                plt.imshow(imagen)
-                plt.show()
+                #plt.imshow(imagen)
+                #plt.show()
 
                 # Ajusta de parametros de la imagen
                 ajuste_brillo = ImageEnhance.Brightness(imagen)
@@ -48,16 +48,16 @@ def generar_datos():
 
                 ajuste_nitidez = ImageEnhance.Sharpness(imagen)
                 imagen = ajuste_nitidez.enhance(nitidez)
-                plt.imshow(imagen)
-                plt.show()
+                #plt.imshow(imagen)
+                #plt.show()
 
                 
                 # Convertir a formato OpenCV y escalar
                 imagen_cv = cv2.resize(np.array(imagen), (tamaño_img, tamaño_img))
 
                 # Mostrar la imagen con el filtro de Sobel
-                plt.imshow(imagen_cv)
-                plt.show()
+                #plt.imshow(imagen_cv)
+                #plt.show()
 
     rn.shuffle(data)
     x=[]
